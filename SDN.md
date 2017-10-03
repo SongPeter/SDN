@@ -2,12 +2,12 @@ SDN & NFV
 ================
 ## 一、SDN
 软件定义网络(Software Defined Networking, SDN)，诞生于美国GENI项目资助的斯坦福大学Clean Slate课题（2006年），是一种新型的网络架构和技术，核心思想在于将传统的IP网络的数据转发和路由控制进行分离，实现集中控制，分布转发，来简化网络优化网络，图1显示的是SDN的发展历程。
-<center>
+<div style="margin:0 auto; width:400px; height:100px;">
 
 ![](./SDN路线.png) 
 
 ##### 图1 SDN的发展历程
-</center>
+</div>
 图2是SDN的常见建构，主要有三部分组成：基础设施层、控制层和应用层，其中:</br>
 <center>
 
