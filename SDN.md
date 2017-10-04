@@ -24,9 +24,9 @@ SDN技术特征：
 下图是ETSI NFV标准架构： </br>
 ![](./ETSI_NFV标准架构.png) </br>
 其中包括 **NFV infrastructure(NFVI)，MANO(Management and Orchestration)和VNFs**，三者是标准架构中顶级的概念实体。</br>
-**NFVI（NFV Infrastructure）**包含了虚拟化层（hypervisor或者容器管理系统，如Docker，以及vSwitch）以及物理资源，如COTS服务器、交换机、存储设备等。NFVI可以跨越若干个物理位置进行部署，此时，为这些物理站点提供数据连接的网络也称为NFVI的一部分。为了兼容基于现有的网络架构，NFVI的网络接入点要能够跟其它物理网络互联互通。NFV支持多vendor，NFVI是一种通用的虚拟化层，所有虚拟资源应该是在一个统一共享的资源池中，不应该受制或者特殊对待某些运行其上的VNF。</br>
+ **NFVI（NFV Infrastructure）** 包含了虚拟化层（hypervisor或者容器管理系统，如Docker，以及vSwitch）以及物理资源，如COTS服务器、交换机、存储设备等。NFVI可以跨越若干个物理位置进行部署，此时，为这些物理站点提供数据连接的网络也称为NFVI的一部分。为了兼容基于现有的网络架构，NFVI的网络接入点要能够跟其它物理网络互联互通。NFV支持多vendor，NFVI是一种通用的虚拟化层，所有虚拟资源应该是在一个统一共享的资源池中，不应该受制或者特殊对待某些运行其上的VNF。</br>
 NFV、VNF三个同样的字母调换了顺序，含义截然不同。NFV是一种虚拟化技术或概念，解决了将网络功能部署在通用硬件上的问题；而VNF指的是具体的虚拟网络功能，提供某种网络服务，是软件，利用NFVI提供的基础设施部署在虚拟机、容器或者bare-metal物理机中。相对于VNF，传统的基于硬件的网元可以称为PNF。VNF和PNF能够单独或者混合组网，形成所谓的service chain，提供特定场景下所需的E2E网络服务。</br>
-**MANO（Management and Orchestration）**提供了NFV的整体管理和编排，向上接入OSS/BSS，由NFVO（NFV Orchestrator）、VNFM（VNF Manager）以及VIM（Virtualised infrastructure manager）虚拟化基础设施管理器三者共同组成。Orchestration，本意是管弦乐团，在NFV架构中，凡是带’O’的组件都有一定的编排作用，各个VNF、PNF、及其它各类资源只有合理编排下，在正确的时间做正确的事情，整个系统才能发挥应有的作用。</br>
+ **MANO（Management and Orchestration）** 提供了NFV的整体管理和编排，向上接入OSS/BSS，由NFVO（NFV Orchestrator）、VNFM（VNF Manager）以及VIM（Virtualised infrastructure manager）虚拟化基础设施管理器三者共同组成。Orchestration，本意是管弦乐团，在NFV架构中，凡是带’O’的组件都有一定的编排作用，各个VNF、PNF、及其它各类资源只有合理编排下，在正确的时间做正确的事情，整个系统才能发挥应有的作用。</br>
 VIM：NFVI被VIM管理，VIM控制着VNF的虚拟资源分配，如虚拟计算，虚拟存储和虚拟网络。Openstack和VMWare都可以作为VIM，前者是开源的，后者是商业的。</br>
 VNFM：管理VNF的生命周期，如上线、下线，进行状态监控、image onboard。VNFM基于VNFD（VNF描述）来管理VNF。</br>
 NFVO：用以管理NS（Network Service，网络业务）生命周期，并协调NS生命周期的管理、协调VNF生命周期的管理（需要得到VNF管理器VNFM的支持）、协调NFVI各类资源的管理（需要得到虚拟化基础设施管理器VIM的支持），以此确保所需各类资源与连接的优化配置。onboard新的网络业务，VNF转发表，VNF package。 NFVO基于NSD（网络服务描述）运行，NSD中包含Service chain，NFV以及perfomance goal等。 </br>
