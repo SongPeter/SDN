@@ -22,7 +22,7 @@ SDN技术特征：
 ## 二、NFV
 网络功能虚拟化(Network Function Virtualization, NFV)，即用软件来安装、控制、操作那些运行在通用硬件上的网络功能，融合了云和虚拟化技术，使得新一代网络业务拥有更好的伸缩性和自动化能力。NFV则由运营商联盟提出，为了加速部署新的网络服务，运营商倾向于放弃笨重昂贵的专用网络设备，转而使用标准的IT虚拟化技术来拆分网络功能模块，如DNS、NAT、Firewall等。于是一些运营商联合成立了欧洲通信标准协会ETSI（European Telecommunications Standards Institute），他的一个工作组（ETSI ISG NFV）负责开发制定电信网络的虚拟化架构，如NFV MANO。</br>
 下图是ETSI NFV标准架构： </br>
-![](./ETSI_NFV标准架构.jpg) </br>
+![](./ETSI_NFV标准架构.png) </br>
 其中包括NFV infrastructure(NFVI)，MANO(Management and Orchestration)和VNFs，三者是标准架构中顶级的概念实体。</br>
 NFVI（NFV Infrastructure）包含了虚拟化层（hypervisor或者容器管理系统，如Docker，以及vSwitch）以及物理资源，如COTS服务器、交换机、存储设备等。NFVI可以跨越若干个物理位置进行部署，此时，为这些物理站点提供数据连接的网络也称为NFVI的一部分。为了兼容基于现有的网络架构，NFVI的网络接入点要能够跟其它物理网络互联互通。NFV支持多vendor，NFVI是一种通用的虚拟化层，所有虚拟资源应该是在一个统一共享的资源池中，不应该受制或者特殊对待某些运行其上的VNF。</br>
 NFV、VNF三个同样的字母调换了顺序，含义截然不同。NFV是一种虚拟化技术或概念，解决了将网络功能部署在通用硬件上的问题；而VNF指的是具体的虚拟网络功能，提供某种网络服务，是软件，利用NFVI提供的基础设施部署在虚拟机、容器或者bare-metal物理机中。相对于VNF，传统的基于硬件的网元可以称为PNF。VNF和PNF能够单独或者混合组网，形成所谓的service chain，提供特定场景下所需的E2E网络服务。</br>
@@ -78,4 +78,4 @@ SDN跟NFV最明显的区别是，SDN处理的是OSI模型中的2-3层，NFV处�
 
 #### 参考资料
 http://www.doit.com.cn/p/255330.html
-
+http://blog.csdn.net/napolunyishi/article/details/60876466
